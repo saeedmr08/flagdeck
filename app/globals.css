@@ -1,0 +1,91 @@
+:root {
+  --ink: #0c1f2e;
+  --ink-soft: #1a3a4f;
+  --sea: #0e4d5c;
+  --foam: #e8f2f0;
+  --signal-red: #c43c2c;
+  --signal-yellow: #e6b422;
+  --signal-green: #2a8f6f;
+  --brass: #b8953a;
+  --rope: #8b6914;
+  --panel: rgba(232, 242, 240, 0.92);
+  --line: rgba(12, 31, 46, 0.12);
+  --shadow: 0 18px 40px rgba(12, 31, 46, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(230, 180, 34, 0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(14, 77, 92, 0.22), transparent),
+    linear-gradient(165deg, #d4e8e4 0%, #a8c5c0 38%, #6a9aa3 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: repeating-linear-gradient(
+    -12deg,
+    transparent,
+    transparent 11px,
+    var(--ink) 11px,
+    var(--ink) 12px
+  );
+  z-index: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+@keyframes hoist {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pennant-sway {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes pulse-live {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(42, 143, 111, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(42, 143, 111, 0);
+  }
+}
